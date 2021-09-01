@@ -11,7 +11,7 @@ This role is only running at:
 when:
 ```
 
-+ It will download the defined Firmware Files from the ``rtl_nic__firmware`` variable.
++ It will download the defined Firmware Files from the ``amdgpu__firmware`` variable.
 + Then we run ``update-initramfs -k all -u``.
 
 You can change the downloaded firmware file names by modifying the default variables.

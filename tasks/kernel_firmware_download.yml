@@ -1,21 +1,21 @@
 ---
-- name: "create {{ rtl_nic__path_prefix }}/{{ rtl_nic__path_suffix }}"
+- name: "create {{ amdgpu__path_prefix }}/{{ amdgpu__path_suffix }}"
   become: true
   ansible.builtin.file:
-    path: "{{ rtl_nic__path_prefix }}/{{ item }}"
+    path: "{{ amdgpu__path_prefix }}/{{ item }}"
     state: directory
     mode: 0755
     owner: root
     group: root
-  with_items: "{{ rtl_nic__path_suffix }}"
+  with_items: "{{ amdgpu__path_suffix }}"
 
-- name: download rtl_nic firmware
+- name: download amdgpu firmware
   become: true
   ansible.builtin.get_url:
-    url: "{{ rtl_nic__download_prefix }}/{{ item }}"
-    dest: "{{ rtl_nic__path_prefix }}/{{ item }}"
+    url: "{{ amdgpu__download_prefix }}/{{ item }}"
+    dest: "{{ amdgpu__path_prefix }}/{{ item }}"
     owner: root
     group: root
     mode: 0644
-  with_items: "{{ rtl_nic__firmware }}"
+  with_items: "{{ amdgpu__firmware }}"
   notify: update initrd

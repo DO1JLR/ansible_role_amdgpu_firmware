@@ -1,8 +1,8 @@
 ---
 galaxy_info:
-  role_name: rtl_nic_firmware
+  role_name: amdgpu_firmware
   author: do1jlr
-  description: Ansible role to install some missing rtl_nic Firmware for APU
+  description: Ansible role to install some missing amdgpu Firmware for my AMD Thinkpad
   license: "MIT"
   min_ansible_version: 2.11
   github_branch: main
