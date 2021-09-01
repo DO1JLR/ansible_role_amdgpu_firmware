@@ -4,7 +4,6 @@ amdgpu__download_prefix: 'https://git.kernel.org/pub/scm/linux/kernel/git/firmwa
 
 # define firmware list
 amdgpu__firmware:
-  - 'amdgpu/vangogh_gpu_info.bin'
   - 'amdgpu/vangogh_toc.bin'
   - 'amdgpu/vangogh_asd.bin'
   - 'amdgpu/navy_flounder_ta.bin'
@@ -23,8 +22,6 @@ amdgpu__firmware:
   - 'amdgpu/navy_flounder_ce.bin'
   - 'amdgpu/vangogh_sdma.bin'
   - 'amdgpu/navy_flounder_sdma.bin'
-  - 'amdgpu/sienna_cichlid_mes.bin'
-  - 'amdgpu/navi10_mes.bin'
   - 'amdgpu/vangogh_vcn.bin'
   - 'amdgpu/navy_flounder_vcn.bin'
   - 'amdgpu/arcturus_vcn.bin'
