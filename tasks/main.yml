@@ -1,9 +1,16 @@
 ---
-- name: run optional versioncheck
-  ansible.builtin.include_tasks: versioncheck.yml
-  when: submodules_versioncheck|bool
+- name: Run optional versioncheck
+  ansible.builtin.include_tasks:
+    file: 'versioncheck.yml'
+  when:
+    - submodules_versioncheck | bool
 
-- name: download additional firmware on apu board
-  ansible.builtin.include_tasks: kernel_firmware_download.yml
+- name: Install some firmware packages
+  ansible.builtin.include_tasks:
+    file: 'firmware.yml'
+
+- name: Download additional firmware on apu board
+  ansible.builtin.include_tasks:
+    file: 'kernel_firmware_download.yml'
   when:
     - ansible_processor[1] == 'AuthenticAMD'

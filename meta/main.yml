@@ -2,18 +2,21 @@
 galaxy_info:
   role_name: amdgpu_firmware
   author: do1jlr
+  namespace: l3d
   description: Ansible role to install some missing amdgpu Firmware for my AMD Thinkpad
   license: "MIT"
-  min_ansible_version: 2.11
-  github_branch: main
+  min_ansible_version: '2.13'
   platforms:
     - name: Debian
-      versions: all
+      versions: ['all']
     - name: Ubuntu
-      versions: all
+      versions: ['all']
   galaxy_tags:
     - apu
     - firmware
     - rtl
     - nic
+    - amd
+    - amdgpu
+    - linux
 dependencies: []

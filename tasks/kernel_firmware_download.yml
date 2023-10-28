@@ -1,21 +1,21 @@
 ---
-- name: "create {{ amdgpu__path_prefix }}/{{ amdgpu__path_suffix }}"
+- name: "Create directory for firmware"
   become: true
   ansible.builtin.file:
     path: "{{ amdgpu__path_prefix }}/{{ item }}"
-    state: directory
-    mode: 0755
-    owner: root
-    group: root
-  with_items: "{{ amdgpu__path_suffix }}"
+    state: 'directory'
+    mode: '0755'
+    owner: 'root'
+    group: 'root'
+  loop: "{{ amdgpu__path_suffix }}"
 
-- name: download amdgpu firmware
+- name: Download amdgpu firmware
   become: true
   ansible.builtin.get_url:
     url: "{{ amdgpu__download_prefix }}/{{ item }}"
     dest: "{{ amdgpu__path_prefix }}/{{ item }}"
-    owner: root
-    group: root
-    mode: 0644
-  with_items: "{{ amdgpu__firmware }}"
-  notify: update initrd
+    owner: 'root'
+    group: 'root'
+    mode: '0644'
+  loop: "{{ amdgpu__firmware }}"
+  notify: 'Run update initramfs'
