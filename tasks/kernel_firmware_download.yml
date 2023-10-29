@@ -7,7 +7,8 @@
     mode: '0755'
     owner: 'root'
     group: 'root'
-  loop: "{{ amdgpu__path_suffix }}"
+  loop:
+    - "{{ amdgpu__path_suffix }}"
 
 - name: Download amdgpu firmware
   become: true
